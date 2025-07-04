@@ -1,16 +1,9 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+from typing import List
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for primary_index, primary_number in enumerate(nums):
+            for secondary_index, secondary_number in enumerate(nums[primary_index + 1:]):
+                if primary_number + secondary_number == target:
+                    return [primary_index, 1 + primary_index + secondary_index]
